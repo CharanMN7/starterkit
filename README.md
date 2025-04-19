@@ -13,6 +13,9 @@ A modern SaaS template built with Next.js 15, Tailwind CSS v4, Shadcn UI v2, and
 - 🌓 **Dark Mode** - Light and dark theme support
 - 🧩 **React Hook Form** - Flexible form validation
 - ⚙️ **Zod** - Schema validation
+- 🛡️ **Enhanced Security** - Robust authentication with rate limiting
+- 🔒 **Security Headers** - CSP and other security headers
+- 🚫 **Anti-Brute Force** - Protection against authentication attacks
 
 ## Prerequisites
 
@@ -66,6 +69,45 @@ pnpm dev
 
 Your application should now be running at [http://localhost:3000](http://localhost:3000).
 
+## Authentication System
+
+The template includes a secure authentication system with several security enhancements:
+
+### Features
+
+- Email/password authentication
+- Google OAuth integration
+- Strong password requirements
+- Secure password handling 
+- Session management with secure cookies
+- Protection against common attack vectors
+
+### Rate Limiting
+
+To protect against brute force attacks and abuse, the system implements rate limiting:
+
+- **Login**: Limited to 5 attempts per minute per email
+- **Registration**: Limited to 3 attempts per minute per email
+- Automatic blocking of excessive login/registration attempts
+- Graceful error messages that don't reveal sensitive information
+
+### Security Headers
+
+The application implements various security headers through middleware:
+
+- Content Security Policy (CSP)
+- X-Content-Type-Options
+- X-Frame-Options
+- X-XSS-Protection
+- Referrer-Policy
+- Permissions-Policy
+
+### Limitations
+
+- The current rate limiting implementation uses in-memory storage, which doesn't persist between server restarts
+- For production environments, consider replacing with a Redis-based solution
+- IP-based limiting should be added for additional security
+
 ## Project Structure
 
 ```
@@ -79,6 +121,7 @@ Your application should now be running at [http://localhost:3000](http://localho
 ├── lib/                    # Utility functions and libraries
 ├── public/                 # Static assets
 └── utils/                  # Helper functions
+    └── supabase/           # Supabase client configuration
 ```
 
 ## Deployment
