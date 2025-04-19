@@ -1,9 +1,9 @@
 {
-  "name": "nextjs15-taliwind4-supabase-saas-template",
-  "description": "SaaS template - Next.js 15 + Tailwind CSS v4 + Shadcn UI v2 + Supabase",
-  "author": "Charan",
-  "email": "contact@charan.dev",
-  "website": "https://charan.dev",
+  "name": "devsforfun-frontend-template",
+  "description": "devsForFun opensource frontend template",
+  "author": "devsForFun",
+  "email": "charan@devsforfun.com",
+  "website": "https://devsforfun.com",
   "version": "0.1.0",
   "private": true,
   "scripts": {

@@ -76,7 +76,7 @@ The template includes a secure authentication system with several security enhan
 - Email/password authentication
 - Google OAuth integration
 - Strong password requirements
-- Secure password handling 
+- Secure password handling
 - Session management with secure cookies
 - Protection against common attack vectors
 
