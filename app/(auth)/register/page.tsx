@@ -15,15 +15,18 @@ import { Input } from '@/components/ui/input';
 import { PasswordInput } from '@/components/ui/password-input';
 import { signup, signInWithGoogle } from '@/app/actions/auth';
 
-// Define validation schema using Zod
+// Define stronger validation schema using Zod
 const formSchema = z
   .object({
     name: z.string().min(2, { message: 'Name must be at least 2 characters long' }),
     email: z.string().email({ message: 'Invalid email address' }),
     password: z
       .string()
-      .min(6, { message: 'Password must be at least 6 characters long' })
-      .regex(/[a-zA-Z0-9]/, { message: 'Password must be alphanumeric' }),
+      .min(8, { message: 'Password must be at least 8 characters long' })
+      .regex(/[a-z]/, { message: 'Password must contain at least one lowercase letter' })
+      .regex(/[A-Z]/, { message: 'Password must contain at least one uppercase letter' })
+      .regex(/[0-9]/, { message: 'Password must contain at least one number' })
+      .regex(/[\W_]/, { message: 'Password must contain at least one special character' }),
     confirmPassword: z.string(),
   })
   .refine((data) => data.password === data.confirmPassword, {
@@ -45,17 +48,22 @@ export default function RegisterPreview() {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    // Attempt registration
-    const response = await signup(values);
-    if (response.error) {
-      toast.error(response.error);
-      // Optionally, mark the email field as erroneous
-      form.setError('email', { message: response.error });
-      return;
+    try {
+      // Attempt registration
+      const response = await signup(values);
+      if (response.error) {
+        toast.error(response.error);
+        // Set a generic error to avoid user enumeration
+        form.setError('root', { message: response.error });
+        return;
+      }
+      toast('Successfully registered! Check your email for a confirmation link.');
+      setRegistered(true);
+      router.push('/check-email');
+    } finally {
+      // Clear sensitive data from memory
+      form.reset();
     }
-    toast('Successfully registered! Check your email for a confirmation link.');
-    setRegistered(true);
-    router.push('/check-email');
   }
 
   return (

@@ -16,13 +16,15 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Input } from '@/components/ui/input';
 import { PasswordInput } from '@/components/ui/password-input';
 
-// Improved schema with additional validation rules
+// Improved schema with stronger validation rules
 const formSchema = z.object({
   email: z.string().email({ message: 'Invalid email address' }),
   password: z
     .string()
-    .min(6, { message: 'Password must be at least 6 characters long' })
-    .regex(/[a-zA-Z0-9]/, { message: 'Password must be alphanumeric' }),
+    .min(8, { message: 'Password must be at least 8 characters long' })
+    .regex(/[a-z]/, { message: 'Password must contain at least one lowercase letter' })
+    .regex(/[A-Z]/, { message: 'Password must contain at least one uppercase letter' })
+    .regex(/[0-9]/, { message: 'Password must contain at least one number' }),
 });
 
 export default function LoginPreview() {
@@ -49,17 +51,22 @@ export default function LoginPreview() {
     });
   }, [router]);
 
-  // In your login page onSubmit
+  // Enhance security by clearing sensitive form data after submission
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    const response = await login(values);
-    if (response.error) {
-      toast.error(response.error);
-      form.setError('email', { message: response.error });
-      return;
+    try {
+      const response = await login(values);
+      if (response.error) {
+        toast.error(response.error);
+        form.setError('root', { message: response.error });
+        return;
+      }
+      toast('Login successful. You will be redirected to the app shortly.');
+      setLoggedIn(true);
+      router.push('/learn');
+    } finally {
+      // Clear sensitive data from memory
+      form.reset();
     }
-    toast('Login successful. You will be redirected to the app shortly.');
-    setLoggedIn(true);
-    router.push('/learn');
   }
 
   if (loading) {
