@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'SaaS template - Next.js 15 + Tailwind CSS v4 + Shadcn UI v2 + Supabase',
-  description: 'SaaS template - Next.js 15 + Tailwind CSS v4 + Shadcn UI v2 + Supabase',
+  title: 'devsForFun opensource frontend template',
+  description: 'devsForFun opensource frontend template',
   icons: {
     icon: '/favicon.ico',
   },
