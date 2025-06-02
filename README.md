@@ -13,9 +13,9 @@ A modern SaaS template built with Next.js 15, Tailwind CSS v4, Shadcn UI v2, and
 - 🌓 **Dark Mode** - Light and dark theme support
 - 🧩 **React Hook Form** - Flexible form validation
 - ⚙️ **Zod** - Schema validation
-- 🛡️ **Enhanced Security** - Robust authentication with rate limiting
-- 🔒 **Security Headers** - CSP and other security headers
-- 🚫 **Anti-Brute Force** - Protection against authentication attacks
+- 🛡️ **Enhanced Security** - Robust authentication with rate limiting (Coming Soon)
+- 🔒 **Security Headers** - CSP and other security headers (Coming Soon)
+- 🚫 **Anti-Brute Force** - Protection against authentication attacks (Coming Soon)
 
 ## Prerequisites
 
@@ -27,7 +27,7 @@ A modern SaaS template built with Next.js 15, Tailwind CSS v4, Shadcn UI v2, and
 ### Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/frontend-template.git
+git clone https://github.com/devsForFun/frontend-template.git
 cd frontend-template
 ```
 
@@ -64,6 +64,8 @@ pnpm dev
 ```
 
 Your application should now be running at [http://localhost:3000](http://localhost:3000).
+
+Or, you can create a project directly on GitHub by choosing `devsForFun/frontend-template` as the template.
 
 ## Authentication System
 
