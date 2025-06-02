@@ -34,10 +34,8 @@ cd frontend-template
 ### Install dependencies
 
 ```bash
-npm install --legacy-peer-deps
+npm install
 ```
-
-> **Note:** The `--legacy-peer-deps` flag is required due to compatibility issues between react-day-picker and other dependencies. Shadcn UI uses react-day-picker v8.x for its calendar component, and upgrading to v9 would break the custom implementation (specifically the `IconLeft` and `IconRight` components). This flag allows npm to ignore peer dependency conflicts until Shadcn UI updates their components for the newer version.
 
 ### Set up environment variables
 
