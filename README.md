@@ -13,9 +13,9 @@ A modern SaaS template built with Next.js 15, Tailwind CSS v4, Shadcn UI v2, and
 - 🌓 **Dark Mode** - Light and dark theme support
 - 🧩 **React Hook Form** - Flexible form validation
 - ⚙️ **Zod** - Schema validation
-- 🛡️ **Enhanced Security** - Robust authentication with rate limiting
-- 🔒 **Security Headers** - CSP and other security headers
-- 🚫 **Anti-Brute Force** - Protection against authentication attacks
+- 🛡️ **Enhanced Security** - Robust authentication with rate limiting (Coming Soon)
+- 🔒 **Security Headers** - CSP and other security headers (Coming Soon)
+- 🚫 **Anti-Brute Force** - Protection against authentication attacks (Coming Soon)
 
 ## Prerequisites
 
@@ -27,17 +27,15 @@ A modern SaaS template built with Next.js 15, Tailwind CSS v4, Shadcn UI v2, and
 ### Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/frontend-template.git
+git clone https://github.com/devsForFun/frontend-template.git
 cd frontend-template
 ```
 
 ### Install dependencies
 
 ```bash
-npm install --legacy-peer-deps
+npm install
 ```
-
-> **Note:** The `--legacy-peer-deps` flag is required due to compatibility issues between react-day-picker and other dependencies. Shadcn UI uses react-day-picker v8.x for its calendar component, and upgrading to v9 would break the custom implementation (specifically the `IconLeft` and `IconRight` components). This flag allows npm to ignore peer dependency conflicts until Shadcn UI updates their components for the newer version.
 
 ### Set up environment variables
 
@@ -66,6 +64,8 @@ pnpm dev
 ```
 
 Your application should now be running at [http://localhost:3000](http://localhost:3000).
+
+Or, you can create a project directly on GitHub by choosing `devsForFun/frontend-template` as the template.
 
 ## Authentication System
 
