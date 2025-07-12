@@ -34,7 +34,11 @@ cd frontend-template
 ### Install dependencies
 
 ```bash
-npm install
+npm intstall
+# or
+yarn install
+# or
+pnpm install
 ```
 
 ### Set up environment variables
