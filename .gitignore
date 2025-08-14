@@ -24,6 +24,7 @@
 .DS_Store
 *.pem
 ._*
+example-supabase-local-credentials.txt
 
 # debug
 npm-debug.log*
