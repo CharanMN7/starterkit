@@ -114,7 +114,7 @@ yarn dev
 
 Your application should now be running at [http://localhost:3000](http://localhost:3000).
 
-## Some Features
+## Some **Features**
 - Email/password authentication
 - Google OAuth integration
 - Strong password requirements
@@ -128,14 +128,32 @@ Your application should now be running at [http://localhost:3000](http://localho
 /
 ├── app/                    # Next.js App Router
 │   ├── (auth)/             # Authentication routes
+│   │   ├── forgot-password/
+│   │   ├── login/
+│   │   ├── register/
+│   │   └── reset-password/
 │   ├── (public)/           # Public routes
-│   └── (authenticated)/    # Protected routes
+│   ├── (authenticated)/    # Protected routes
+│   ├── actions/            # Server actions
+│   └── globals.css         # Global styles
+├── assets/                 # Project assets
+│   ├── images/             # Image assets
+│   └── logos/              # Logo files
 ├── components/             # React components
+│   ├── ui/                 # Shadcn UI components
+│   ├── mode-toggle.tsx     # Dark/light mode toggle
+│   └── theme-provider.tsx  # Theme context provider
 ├── hooks/                  # Custom React hooks
 ├── lib/                    # Utility functions and libraries
-├── public/                 # Static assets
-└── utils/                  # Helper functions
-    └── supabase/           # Supabase client configuration
+├── public/                 # Static assets (favicons, etc.)
+├── supabase/               # Supabase configuration
+├── utils/                  # Helper functions
+│   └── supabase/           # Supabase client configuration
+├── middleware.ts           # Next.js middleware
+├── next.config.ts          # Next.js configuration
+├── tailwind.config.ts      # Tailwind CSS configuration
+├── tsconfig.json           # TypeScript configuration
+└── components.json         # Shadcn UI configuration
 ```
 
 ## Deployment
