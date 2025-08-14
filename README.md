@@ -114,12 +114,7 @@ yarn dev
 
 Your application should now be running at [http://localhost:3000](http://localhost:3000).
 
-## Authentication System
-
-The template includes a secure authentication system with several security enhancements:
-
-### Features
-
+## Some Features
 - Email/password authentication
 - Google OAuth integration
 - Strong password requirements
