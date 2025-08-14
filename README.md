@@ -76,7 +76,7 @@ supabase start
 >   S3 Secret Key: 850181e4652dd023b7a98c58ae0d2d34bd487ee0cc3254aed6eda37307425907
 >       S3 Region: local
 > ```
-> **Copy those credentials from you terminal** and save them in your notes or create a `example-supabase-local-credentials.txt` file in this repo (it is already added to `.gitignore` so that it is not pushed into the repository.)
+> **Copy those credentials from you terminal** and save them in your notes or create a `supabase-local-credentials.txt` file in this repo (it is already added to `.gitignore` so that it is not pushed into the repository.)
 
 ### 4. Set up environment variables
 
